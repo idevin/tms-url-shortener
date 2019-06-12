@@ -1,0 +1,26 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+    <div class="large-12 small-12 columns text-center">
+
+        <form action="{% url 'change_url' hash=hash %}" method="post">
+
+            {% load widget_tweaks %}
+            {% csrf_token %}
+
+            <div class="input-group">
+                <span class="input-group-label">{{ uri }}</span>
+
+                {% render_field form.hash class="input-group-field" value=original_hash %}
+
+                <div class="input-group-button">
+                    <input type="submit" class="button" value="CHANGE URL">
+                </div>
+            </div>
+        </form>
+
+        <br>
+
+        <a href="/">back</a>
+    </div>
+{% endblock %}

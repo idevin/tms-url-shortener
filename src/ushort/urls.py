@@ -19,5 +19,6 @@ from ushort import views
 urlpatterns = [
     path('', views.index),
     path('get', views.get, name='get'),
+    path('change_url/<hash>', views.change_url, name='change_url'),
     path('<hash>', views.redirect_to_url),
 ]

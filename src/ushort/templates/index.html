@@ -26,27 +26,32 @@
                 <th>Link</th>
                 <th>Shorten</th>
                 <th>Date</th>
-                <th>clicks</th>
+                <th>Clicks</th>
+                <th>Operations</th>
             </tr>
             </thead>
             <tbody>
             {% for item in items %}
                 <tr>
                     <td>
-                        <a href="{{ item.url }}" target="_blank">{{ item.url }}</a>
+                        <a href="{{ item.url }}" target="_blank">{{ item.url|truncatechars:30 }}</a>
                     </td>
                     <td>
-                        <a href="{{ uri }}{{ item.hash }}" target="_blank">{{ uri }}{{ item.hash }}</a>
+                        <a href="{{ uri }}{{ item.hash }}" target="_blank" title="{{ uri }}{{ item.hash }}">
+                            {{ uri }}{{ item.hash|truncatechars:20 }}</a>
                     </td>
                     <td>{{ item.created }}</td>
                     <td>{{ item.clicks }}</td>
+                    <td>
+                        <a href="{% url 'change_url' hash=item.hash %}">edit</a>
+                    </td>
                 </tr>
             {% endfor %}
             </tbody>
         </table>
     {% endif %}
 
-    {% if items.paginator.num_pages > 0 %}
+    {% if items.paginator.count >= per_page %}
         <div class="text-center">
             {% if items.has_previous %}
                 <a href="?p=1">first</a>
