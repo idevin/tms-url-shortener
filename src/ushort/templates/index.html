@@ -1,0 +1,71 @@
+{% extends 'base_template.html' %}
+
+{% load widget_tweaks %}
+
+{% block content %}
+    <form action="{% url 'get' %}" method="post">
+
+        {% csrf_token %}
+
+        <div class="input-group">
+            <span class="input-group-label">URL</span>
+
+            {% render_field form.url class="input-group-field" %}
+
+            <div class="input-group-button">
+                <input type="submit" class="button" value="GET">
+            </div>
+        </div>
+
+    </form>
+
+    {% if items.paginator.count > 0 %}
+        <table>
+            <thead>
+            <tr>
+                <th>Link</th>
+                <th>Shorten</th>
+                <th>Date</th>
+                <th>clicks</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in items %}
+                <tr>
+                    <td>
+                        <a href="{{ item.url }}" target="_blank">{{ item.url }}</a>
+                    </td>
+                    <td>
+                        <a href="{{ uri }}{{ item.hash }}" target="_blank">{{ uri }}{{ item.hash }}</a>
+                    </td>
+                    <td>{{ item.created }}</td>
+                    <td>{{ item.clicks }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+
+    {% if items.paginator.num_pages > 0 %}
+        <div class="text-center">
+            {% if items.has_previous %}
+                <a href="?p=1">first</a>
+                <a href="?p={{ items.previous_page_number }}">&laquo;</a>
+            {% endif %}
+
+            {% for page in items.paginator.page_range %}
+                {% if page == items.number %}
+                    {{ current_page }}
+                {% else %}
+                    <a href="?p={{ page }}">{{ page }}</a>
+                {% endif %}
+            {% endfor %}
+
+            {% if items.has_next %}
+                <a href="?p={{ items.next_page_number }}">&raquo;</a>
+                <a href="?p={{ items.paginator.num_pages }}">last</a>
+            {% endif %}
+        </div>
+    {% endif %}
+
+{% endblock %}

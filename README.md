@@ -8,17 +8,11 @@ Dummy package for shorten urls like bit.ly service
 
 ### Prerequisites
 
-Project uses MYSQl db so one need to install mysql client and mysql server.
 Linux system is preferable.
+Project needs some widget tweaks for pretty forms so we can install it using pip:
 
 ```
-sudo apt-get install python3-dev libmysqlclient-dev mysql-server mysql-client
-```
-
-Project needs a mysql python package so we can install it using pip:
-
-```
-pip install mysqlclient
+pip install django-widget-tweaks
 ```
 
 ### Installing
