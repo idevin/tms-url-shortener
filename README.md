@@ -22,68 +22,63 @@ A step by step series of examples that tell you how to get a development env run
 Say what the step will be
 
 ```
-Give the example
+cd SRC_FOLDER_PROJECT
 ```
 
-And repeat
-
 ```
-until finished
+virtualenv -p python3.6
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+```
+.env/bin/activate
+```
+
+```
+./manage.py makemigrations
+```
+
+```
+./manage.py migrate
+```
+
+```
+./manage.py createsuperuser
+```
+
+```
+./manage.py runserver
+```
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
+Sorry, guys, but no test here and it's boring
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+This project runs locally only without CI/CD
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Django](https://www.djangoproject.com/) - Python django framework
+* [Widget tweaks](https://github.com/jazzband/django-widget-tweaks) - More scalable templating system
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Give me a buck [here](https://money.yandex.ru/to/410011764392670)
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+Just Alpha 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Ilya Devin** - *Backend dev* - [Creotech](http://creotech.org)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+GPL
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* For tech me skills Python courses
 
