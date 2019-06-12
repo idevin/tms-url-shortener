@@ -58,7 +58,7 @@ def get(request):
 def redirect_to_url(request, hash):
     try:
         r = Url.objects.get(hash=hash)
-        r.clicks = r.clicks + 1
+        r.clicks += 1
         r.save()
     except Url.DoesNotExist:
         return redirect_home()
