@@ -61,7 +61,7 @@ This project runs locally only without CI/CD
 
 * [Django](https://www.djangoproject.com/) - Python django framework
 * [Widget tweaks](https://github.com/jazzband/django-widget-tweaks) - More scalable templating system
-
+* [FoundationJS](https://foundation.zurb.com/) - FoundationJS frontend framework
 ## Contributing
 
 Give me a buck [here](https://money.yandex.ru/to/410011764392670)
