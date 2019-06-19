@@ -80,5 +80,5 @@ GPL
 
 ## Acknowledgments
 
-* For tech me skills Python courses
+* For teach me skills Python courses
 
